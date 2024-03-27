@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "ab7614d4-6504-461e-bc07-fc0066f841a7",
+		"name": "TestCollections_STC_Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33885055"
+	},
+	"item": [
+		{
+			"name": "create space api",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"spaceName\": \"stc-assessments\",\r\n    \"permissionGroupName\": \"AdminGroup\",\r\n    \"permissions\": [\r\n        {\r\n            \"userEmail\": \"test_view@example.com\",\r\n            \"permissionLevel\": \"VIEW\"\r\n        },\r\n        {\r\n            \"userEmail\": \"test_edit@example.com\",\r\n            \"permissionLevel\": \"EDIT\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/spaces",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"spaces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create folder api",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/folders?spaceName=stc-assessments&folderName=backend",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"folders"
+					],
+					"query": [
+						{
+							"key": "spaceName",
+							"value": "stc-assessments"
+						},
+						{
+							"key": "folderName",
+							"value": "backend"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
